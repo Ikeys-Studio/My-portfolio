@@ -345,31 +345,71 @@ export default function Home() {
           id="music-sound"
           aria-labelledby="music-title"
         >
-          <div className="container music__inner">
-            <div className="music__intro">
-              <p className="section-label">04 / Music &amp; Sound</p>
-              <h2 id="music-title">
-                Sound is part
-                <br />
-                <span className="accent-text">of the story.</span>
-              </h2>
-              <p>
-                From original music and production to sound design and sonic
-                identity, we treat audio as an essential part of the creative
-                experience.
-              </p>
+          <div className="container">
+            <div className="music__inner">
+              <div className="music__intro">
+                <p className="section-label">04 / Music &amp; Sound</p>
+                <h2 id="music-title">
+                  Sound is part
+                  <br />
+                  <span className="accent-text">of the story.</span>
+                </h2>
+                <p>
+                  We shape the sonic layer of an experience — from a distinct
+                  brand voice to original music and carefully considered
+                  production. Audio should do more than fill a space; it should
+                  make the idea resonate.
+                </p>
+                <a className="music__contact-link" href="#contact">
+                  Talk to us about sound <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <div className="music__feature">
+                <div className="music__feature-top">
+                  <span className="music__eyebrow">THE SONIC PRACTICE</span>
+                  <span className="music__status">
+                    <i aria-hidden="true" /> Portfolio in development
+                  </span>
+                </div>
+                <div className="music__sound-art" aria-hidden="true">
+                  <div className="music__sound-orbit music__sound-orbit--one" />
+                  <div className="music__sound-orbit music__sound-orbit--two" />
+                  <div className="music__waveform">
+                    {waveHeights.map((height, index) => (
+                      <i key={index} style={{ height: `${height}%` }} />
+                    ))}
+                  </div>
+                  <span className="music__sound-index">TTA / SOUND</span>
+                </div>
+                <div className="music__feature-copy">
+                  <p className="work-card__tag">A considered approach to audio</p>
+                  <h3>Give the idea a voice.</h3>
+                  <p>
+                    Selected productions and audio examples will be added here
+                    when they are ready to share. Until then, here is what the
+                    practice is built around.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="music__placeholder">
-              <span className="music__placeholder-mark" aria-hidden="true">♪</span>
-              <p className="work-card__tag">Studio playlist / coming soon</p>
-              <h3>Our sound library is taking shape.</h3>
-              <p>
-                Finished productions and selected audio work will appear here.
-                We are keeping this space open until there is work ready to hear.
-              </p>
-              <a className="btn btn--outline" href="#contact">
-                Discuss a sound project <span aria-hidden="true">↗</span>
-              </a>
+
+            <div className="music__services">
+              <article className="music__service">
+                <span>01 / IDENTITY</span>
+                <h3>Sonic branding</h3>
+                <p>Distinctive audio cues and sound palettes that help a brand become recognisable.</p>
+              </article>
+              <article className="music__service">
+                <span>02 / COMPOSITION</span>
+                <h3>Original music</h3>
+                <p>Purpose-built music for content, campaigns, experiences, and creative projects.</p>
+              </article>
+              <article className="music__service">
+                <span>03 / PRODUCTION</span>
+                <h3>Sound design &amp; post</h3>
+                <p>Designed sound, editing, and finishing that bring clarity and character to the final piece.</p>
+              </article>
             </div>
           </div>
         </section>
