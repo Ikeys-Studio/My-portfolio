@@ -107,11 +107,11 @@ export default function DeveloperPortfolioPage() {
         <div className="developer-project-grid grid gap-5 lg:grid-cols-3">
           {projects.map((project) => (
             <article key={project.number} className="developer-project-card flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[.025] p-6 transition hover:-translate-y-1 hover:border-[#b8f36b]/40 sm:p-7">
-              <div className="flex items-center justify-between gap-3"><span className="text-xs tracking-[.16em] text-white/35">{project.number} / PROJECT</span><span className="rounded-full border border-[#b8f36b]/25 px-3 py-1 text-[10px] uppercase tracking-wider text-[#b8f36b]">{project.status}</span></div>
+              <div className="developer-project-meta flex items-center justify-between gap-3"><span className="developer-project-number text-xs tracking-[.16em] text-white/35">{project.number} / PROJECT</span><span className="developer-project-status rounded-full border border-[#b8f36b]/25 px-3 py-1 text-[10px] uppercase tracking-wider text-[#b8f36b]">{project.status}</span></div>
               <h3 className="mt-10 text-2xl font-medium tracking-tight">{project.name}</h3>
               <p className="mt-4 flex-1 text-sm leading-7 text-white/60">{project.description}</p>
               <p className="mt-6 border-t border-white/10 pt-5 text-xs leading-6 text-white/45">{project.focus}</p>
-              <div className="mt-4 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="rounded-md bg-white/[.06] px-2.5 py-1.5 text-[11px] text-white/65">{item}</span>)}</div>
+              <div className="developer-project-stack mt-4 flex flex-wrap gap-2">{project.stack.map((item) => <span key={item} className="developer-tech-tag rounded-md bg-white/[.06] px-2.5 py-1.5 text-[11px] text-white/65">{item}</span>)}</div>
               <a href={project.href} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#b8f36b] hover:underline">{project.linkLabel} <span aria-hidden="true">↗</span></a>
             </article>
           ))}
