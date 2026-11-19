@@ -1,4 +1,5 @@
 import ContactForm from "../components/ContactForm";
+import BrandMark from "../components/BrandMark";
 import Navbar from "../components/Navbar";
 import {
   ServiceIcon,
@@ -746,9 +747,12 @@ export default function Home() {
         <div className="container">
           <div className="site-footer__top">
             <div className="site-footer__brand">
-              <p className="site-footer__wordmark">
+              <div className="site-footer__lockup">
+                <BrandMark className="site-footer__mark" />
+                <p className="site-footer__wordmark">
                 Triple Thread <span>Agency</span>
-              </p>
+                </p>
+              </div>
               <p className="site-footer__tagline">
                 Three disciplines. One creative vision.
               </p>
