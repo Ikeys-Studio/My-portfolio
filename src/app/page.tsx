@@ -143,27 +143,43 @@ export default function Home() {
         {/* About */}
         <section className="section about" id="about" aria-labelledby="about-title">
           <div className="container">
-            <div className="section-heading">
-              <p className="section-label">01 / About</p>
-              <h2 id="about-title">
-                Three threads,
-                <br />
-                <span className="accent-text">one through-line.</span>
-              </h2>
+            <div className="section-heading section-heading--split about__heading">
+              <div>
+                <p className="section-label">01 / About the agency</p>
+                <h2 id="about-title">
+                  Good work doesn&apos;t
+                  <br />
+                  stay in <span className="accent-text">one lane.</span>
+                </h2>
+              </div>
+              <p className="section-heading__note">
+                We bring creative design, digital technology, and music &amp;
+                sound together early — so every part of a project moves in the
+                same direction.
+              </p>
             </div>
 
             <div className="about__body">
               <div className="about__copy">
                 <p className="about__lead">
-                  Triple Thread Agency is an independent creative studio built
-                  around a simple idea: the strongest work happens when
-                  disciplines overlap.
+                  Triple Thread Agency is an independent creative studio for
+                  ideas that deserve more than a one-dimensional answer.
                 </p>
                 <p>
-                  We bring design, technology, and sound into the same room from
-                  the start. The result is work that looks considered, feels
-                  intuitive, and sounds unmistakably like you.
+                  A strong identity should carry through a website. A digital
+                  experience should have its own rhythm. And sound should add
+                  meaning, not just fill silence. We connect those details into
+                  one coherent experience — shaped around the people and
+                  purpose behind each project.
                 </p>
+
+                <div className="about__belief">
+                  <span className="about__belief-label">What we believe</span>
+                  <p>
+                    The best results happen when the disciplines collaborate,
+                    not when they compete for attention.
+                  </p>
+                </div>
 
                 <ul className="principles">
                   {principles.map((principle, index) => (
@@ -180,7 +196,13 @@ export default function Home() {
                 </ul>
               </div>
 
-              <VennMark />
+              <div className="about__visual">
+                <VennMark />
+                <div className="about__visual-note">
+                  <span>THE TRIPLE THREAD APPROACH</span>
+                  <p>Different disciplines. Shared intent. One connected outcome.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
