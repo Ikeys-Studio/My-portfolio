@@ -586,9 +586,16 @@ export default function Home() {
               <p>
                 Have a project that lives at the intersection of design,
                 technology, and sound? Tell us what you&apos;re building.
+                Share your goals, budget, and ideal timeline so we can make
+                our first conversation count.
               </p>
+              <ul className="contact__steps" aria-label="What happens next">
+                <li><span>01</span> Tell us about your project</li>
+                <li><span>02</span> We review your requirements</li>
+                <li><span>03</span> We follow up to discuss next steps</li>
+              </ul>
               <a className="contact__email" href="mailto:triplethreadagency@gmail.com">
-                triplethreadagency@gmail.com <span aria-hidden="true">↗</span>
+                Prefer email? Contact the studio <span aria-hidden="true">↗</span>
               </a>
             </div>
             <ContactForm />
