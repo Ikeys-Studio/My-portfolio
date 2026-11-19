@@ -63,7 +63,7 @@ export default function DeveloperPortfolioPage() {
     <main id="main" className="developer-page min-h-screen bg-[#101110] text-[#f2f4ef]">
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#101110]/90 backdrop-blur-xl">
         <div className="developer-nav-inner mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-          <a href="/" className="font-semibold tracking-tight">
+          <a href="/" className="developer-brand font-semibold tracking-tight">
             <span className="text-[#b8f36b]">ISAAC</span> GHARTEY
           </a>
           <nav aria-label="Developer portfolio navigation" className="developer-nav flex items-center gap-5 text-sm text-white/65">
@@ -79,15 +79,15 @@ export default function DeveloperPortfolioPage() {
         <div className="pointer-events-none absolute inset-0 opacity-40" style={{ backgroundImage: "linear-gradient(rgba(242,244,239,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(242,244,239,.045) 1px, transparent 1px)", backgroundSize: "56px 56px", maskImage: "linear-gradient(to bottom, black, transparent)" }} />
         <div className="developer-hero-inner relative mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
           <div>
-            <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.22em] text-white/50"><span className="h-2 w-2 rounded-full bg-[#b8f36b]" /> Web developer · Ghana</p>
-            <h1 className="max-w-3xl text-5xl font-medium leading-[1.04] tracking-[-.055em] sm:text-7xl">I build thoughtful <span className="text-[#b8f36b]">digital experiences.</span></h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">I’m Isaac Ghartey, a self-taught web developer focused on frontend development with React, Next.js and TypeScript. I enjoy turning ideas into clear, responsive and useful interfaces.</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#projects" className="rounded-full bg-[#b8f36b] px-6 py-3 text-sm font-semibold text-[#101810] transition hover:bg-[#ccfa8c]">Explore my projects <span aria-hidden="true">↘</span></a>
-              <a href="https://github.com/Ikeys-Studio" target="_blank" rel="noreferrer" className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-[#b8f36b] hover:text-[#b8f36b]">GitHub profile ↗</a>
+            <p className="developer-kicker mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.22em] text-white/50"><span className="h-2 w-2 rounded-full bg-[#b8f36b]" /> Web developer · Ghana</p>
+            <h1 className="developer-title max-w-3xl text-5xl font-medium leading-[1.04] tracking-[-.055em] sm:text-7xl">I build thoughtful <span className="text-[#b8f36b]">digital experiences.</span></h1>
+            <p className="developer-intro mt-7 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">I’m Isaac Ghartey, a self-taught web developer focused on frontend development with React, Next.js and TypeScript. I enjoy turning ideas into clear, responsive and useful interfaces.</p>
+            <div className="developer-actions mt-9 flex flex-wrap gap-3">
+              <a href="#projects" className="developer-primary-link rounded-full bg-[#b8f36b] px-6 py-3 text-sm font-semibold text-[#101810] transition hover:bg-[#ccfa8c]">Explore my projects <span aria-hidden="true">↘</span></a>
+              <a href="https://github.com/Ikeys-Studio" target="_blank" rel="noreferrer" className="developer-secondary-link rounded-full border border-white/20 px-6 py-3 text-sm font-semibold transition hover:border-[#b8f36b] hover:text-[#b8f36b]">GitHub profile ↗</a>
             </div>
           </div>
-          <aside className="rounded-2xl border border-white/10 bg-white/[.035] p-7 sm:p-8">
+          <aside className="developer-focus-card rounded-2xl border border-white/10 bg-white/[.035] p-7 sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[.2em] text-[#b8f36b]">Current focus</p>
             <p className="mt-5 text-2xl font-medium leading-snug">Frontend development<br />& modern web applications</p>
             <div className="mt-8 space-y-4 border-t border-white/10 pt-6 text-sm text-white/60">
