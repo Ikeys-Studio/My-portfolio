@@ -305,8 +305,8 @@ export default function Home() {
                 Have a project that lives at the intersection of design,
                 technology, and sound? Tell us what you&apos;re building.
               </p>
-              <a className="contact__email" href="mailto:triplethreadagency@gmail.com. ">
-                hello@triplethread.agency <span aria-hidden="true">↗</span>
+              <a className="contact__email" href="mailto:triplethreadagency@gmail.com">
+                triplethreadagency@gmail.com <span aria-hidden="true">↗</span>
               </a>
             </div>
             <ContactForm />
