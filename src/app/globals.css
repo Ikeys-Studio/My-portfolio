@@ -618,20 +618,115 @@ a {
 }
 
 .service-card {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 34px 32px 36px;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 34px 32px 30px;
   border: 1px solid var(--line);
   border-radius: 16px;
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.035), transparent 60%);
   transition:
     border-color 0.25s ease,
-    transform 0.25s ease;
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.service-card::before {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  left: 22px;
+  height: 2px;
+  background: var(--accent);
+  content: "";
+  opacity: 0.72;
+  transform: scaleX(0.24);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card--technology::before {
+  opacity: 0.48;
+}
+
+.service-card--sound::before {
+  opacity: 0.3;
+}
+
+.service-card__focus {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.service-card__number span {
+  color: var(--muted);
+  opacity: 0.55;
+}
+
+.service-card__capabilities {
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.service-card__capabilities > span {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.service-card__capabilities ul {
+  margin: 10px 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.service-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.service-card__link span {
+  color: var(--accent);
+  font-size: 17px;
+  transition: transform 0.2s ease;
+}
+
+.service-card__link:hover,
+.service-card__link:focus-visible {
+  color: var(--accent);
+}
+
+.service-card__link:hover span,
+.service-card__link:focus-visible span {
+  transform: translate(3px, -3px);
 }
 
 .service-card:hover {
   border-color: rgba(184, 243, 107, 0.4);
   transform: translateY(-5px);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
 }
 
 .service-card__top {
