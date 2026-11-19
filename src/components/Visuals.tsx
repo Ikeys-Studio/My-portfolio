@@ -41,11 +41,17 @@ export function ThreadsVisual() {
         <circle cx="230" cy="252" r="4" fill="#B8F36B" />
       </svg>
 
+      <div className="threads-visual__stamp">
+        <span className="threads-visual__stamp-code">TTA / 03</span>
+        <span>One connected vision</span>
+      </div>
+
       <div className="threads-visual__legend">
         <span>Design</span>
         <span>Technology</span>
         <span>Sound</span>
       </div>
+      <p className="threads-visual__caption">Three practices. Working as one.</p>
     </div>
   );
 }
