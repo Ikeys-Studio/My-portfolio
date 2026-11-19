@@ -120,8 +120,9 @@ export default function Home() {
                 <span className="accent-text">One creative vision.</span>
               </h1>
               <p className="hero__lead">
-                We connect creative design, digital technology, and music &amp;
-                sound into a single, considered body of work.
+                We bring brand identity, website design and development, and
+                original music &amp; sound together to help businesses and
+                creative teams build a clear, memorable presence.
               </p>
               <div className="hero__actions">
                 <a className="btn btn--primary" href="#work">
@@ -171,15 +172,18 @@ export default function Home() {
             <div className="about__body">
               <div className="about__copy">
                 <p className="about__lead">
-                  Triple Thread Agency is an independent creative studio for
-                  ideas that deserve more than a one-dimensional answer.
+                  Triple Thread Agency is an independent creative studio
+                  connecting brand identity, digital experiences, and music
+                  production for businesses, organisations, and creatives in
+                  Ghana and beyond.
                 </p>
                 <p>
-                  A strong identity should carry through a website. A digital
-                  experience should have its own rhythm. And sound should add
-                  meaning, not just fill silence. We connect those details into
-                  one coherent experience — shaped around the people and
-                  purpose behind each project.
+                  From brand identity and graphic design to website design,
+                  web development, and original music production, we bring the
+                  right disciplines together around one clear purpose. A strong
+                  identity should carry through a website; a digital experience
+                  should have its own rhythm; and sound should add meaning, not
+                  just fill silence.
                 </p>
 
                 <div className="about__belief">
