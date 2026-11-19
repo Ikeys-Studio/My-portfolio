@@ -10,6 +10,7 @@ const disciplines = [
   {
     number: "01",
     title: "Creative Design",
+    focus: "Make it recognizable.",
     description:
       "Identity systems and art direction with a point of view — built to be recognizable across every surface.",
     capabilities: [
@@ -23,6 +24,7 @@ const disciplines = [
   {
     number: "02",
     title: "Digital Technology",
+    focus: "Make it work beautifully.",
     description:
       "Fast, accessible digital experiences, from the first prototype to a production-ready front end.",
     capabilities: [
@@ -36,6 +38,7 @@ const disciplines = [
   {
     number: "03",
     title: "Music & Sound",
+    focus: "Make it memorable.",
     description:
       "Sonic identity and original sound that give a brand a voice beyond the visual.",
     capabilities: [
@@ -227,22 +230,32 @@ export default function Home() {
 
             <div className="services__grid">
               {disciplines.map((discipline) => (
-                <article className="service-card" key={discipline.number}>
+                <article
+                  className={`service-card service-card--${discipline.icon}`}
+                  key={discipline.number}
+                >
                   <div className="service-card__top">
                     <span className="service-card__icon">
                       <ServiceIcon kind={discipline.icon} />
                     </span>
                     <span className="service-card__number">
-                      {discipline.number}
+                      {discipline.number} <span>/ 03</span>
                     </span>
                   </div>
+                  <p className="service-card__focus">{discipline.focus}</p>
                   <h3>{discipline.title}</h3>
                   <p>{discipline.description}</p>
-                  <ul>
-                    {discipline.capabilities.map((capability) => (
-                      <li key={capability}>{capability}</li>
-                    ))}
-                  </ul>
+                  <div className="service-card__capabilities">
+                    <span>What we can help with</span>
+                    <ul>
+                      {discipline.capabilities.map((capability) => (
+                        <li key={capability}>{capability}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <a className="service-card__link" href="#contact">
+                    Start a project <span aria-hidden="true">↗</span>
+                  </a>
                 </article>
               ))}
             </div>
