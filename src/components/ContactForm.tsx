@@ -2,7 +2,7 @@
 
 import type { FormEvent } from "react";
 
-const CONTACT_EMAIL = "hello@triplethread.agency";
+const CONTACT_EMAIL = "triplethreadagency@gmail.com";
 
 export default function ContactForm() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
