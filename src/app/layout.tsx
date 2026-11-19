@@ -70,7 +70,7 @@ const structuredData = {
   url: siteUrl,
   description: siteDescription,
   slogan: "Three disciplines. One creative vision.",
-  email: "mailto:hello@triplethread.agency",
+  email: "mailto:triplethreadagency@gmail.com",
   knowsAbout: ["Creative Design", "Digital Technology", "Music & Sound"],
 };
 
