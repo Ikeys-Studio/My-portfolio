@@ -51,3 +51,47 @@
 @media (prefers-reduced-motion: reduce) {
  .developer-page * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* Explicit visual styling: do not depend on generated utility classes. */
+.developer-page { background: #101110; color: #f2f4ef; font-family: var(--font-body), Arial, sans-serif; }
+.developer-page header { position: sticky; top: 0; z-index: 40; background: rgba(16,17,16,.92); border-bottom: 1px solid rgba(242,244,239,.11); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.developer-page .developer-brand { color: #f2f4ef; font-size: 15px; font-weight: 700; letter-spacing: -.02em; }
+.developer-page .developer-brand span,
+.developer-page .developer-kicker span { color: #b8f36b; }
+.developer-page .developer-nav a { color: rgba(242,244,239,.72); transition: color .2s ease, background .2s ease; }
+.developer-page .developer-nav a:hover { color: #b8f36b; }
+.developer-page .developer-nav a:last-child { display: inline-flex; align-items: center; justify-content: center; padding: 10px 19px; border-radius: 999px; background: #b8f36b; color: #101810; font-weight: 700; }
+.developer-page .developer-hero-inner { position: relative; }
+.developer-page .developer-hero-inner::before { position: absolute; z-index: 0; inset: 0; pointer-events: none; content: ""; opacity: .42; background-image: linear-gradient(rgba(242,244,239,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(242,244,239,.045) 1px, transparent 1px); background-size: 56px 56px; mask-image: linear-gradient(to bottom, black, transparent); }
+.developer-page .developer-hero-inner > div,
+.developer-page .developer-focus-card { position: relative; z-index: 1; }
+.developer-page .developer-kicker { display: flex; align-items: center; gap: 12px; margin: 0 0 26px; color: rgba(242,244,239,.58); font-size: 12px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
+.developer-page .developer-kicker span { display: inline-block; width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: #b8f36b; }
+.developer-page .developer-title { max-width: 11ch; margin: 0; color: #f2f4ef; font-family: var(--font-heading), Arial, sans-serif; font-size: clamp(3.2rem, 6vw, 5.8rem); font-weight: 500; line-height: 1.02; letter-spacing: -.055em; }
+.developer-page .developer-title span { color: #b8f36b; }
+.developer-page .developer-intro { max-width: 62ch; margin: 28px 0 0; color: rgba(242,244,239,.68); font-size: clamp(1rem, 1.35vw, 1.15rem); line-height: 1.9; }
+.developer-page .developer-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.developer-page .developer-primary-link,
+.developer-page .developer-secondary-link { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; padding: 0 24px; border-radius: 999px; font-size: 14px; font-weight: 700; }
+.developer-page .developer-primary-link { background: #b8f36b; color: #101810; }
+.developer-page .developer-primary-link:hover { background: #ccfa8c; }
+.developer-page .developer-secondary-link { border: 1px solid rgba(242,244,239,.22); color: #f2f4ef; }
+.developer-page .developer-secondary-link:hover { border-color: #b8f36b; color: #b8f36b; }
+.developer-page .developer-focus-card { padding: 30px; border: 1px solid rgba(242,244,239,.12); border-radius: 18px; background: rgba(255,255,255,.035); }
+.developer-page .developer-focus-card > p:first-child { color: #b8f36b; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.developer-page #projects h2,
+.developer-page #skills h2,
+.developer-page #about h2 { color: #f2f4ef; font-family: var(--font-heading), Arial, sans-serif; }
+.developer-page #projects h3,
+.developer-page #skills h3 { color: #f2f4ef; }
+.developer-page #projects article a { color: #b8f36b; }
+.developer-page #skills { border-block: 1px solid rgba(242,244,239,.11); background: rgba(255,255,255,.018); }
+.developer-page #about { padding-block: 88px; }
+.developer-page footer { border-top: 1px solid rgba(242,244,239,.11); }
+@media (max-width: 640px) {
+ .developer-page .developer-title { font-size: clamp(2.8rem, 13vw, 4.2rem); }
+ .developer-page .developer-focus-card { padding: 24px; }
+ .developer-page .developer-actions { align-items: stretch; flex-direction: column; }
+ .developer-page .developer-actions a { width: 100%; }
+}
