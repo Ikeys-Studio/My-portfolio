@@ -95,3 +95,64 @@
  .developer-page .developer-actions { align-items: stretch; flex-direction: column; }
  .developer-page .developer-actions a { width: 100%; }
 }
+
+
+/* Reliable spacing for project metadata and technology chips. */
+.developer-page .developer-project-meta {
+ display: flex !important;
+ align-items: center;
+ justify-content: space-between;
+ flex-wrap: wrap;
+ column-gap: 14px;
+ row-gap: 10px;
+ margin-bottom: 0;
+}
+.developer-page .developer-project-number {
+ display: inline-block;
+ flex: 0 1 auto;
+ line-height: 1.5;
+ white-space: nowrap;
+}
+.developer-page .developer-project-status {
+ display: inline-flex;
+ flex: 0 0 auto;
+ align-items: center;
+ justify-content: center;
+ max-width: 100%;
+ padding: 5px 11px;
+ border: 1px solid rgba(184,243,107,.3);
+ border-radius: 999px;
+ color: #b8f36b;
+ font-size: 10px;
+ line-height: 1.4;
+ letter-spacing: .08em;
+ text-transform: uppercase;
+ white-space: normal;
+}
+.developer-page .developer-project-stack {
+ display: flex !important;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: 8px;
+ margin-top: 16px;
+}
+.developer-page .developer-tech-tag {
+ display: inline-flex;
+ align-items: center;
+ width: max-content;
+ max-width: 100%;
+ margin: 0;
+ padding: 6px 10px;
+ border-radius: 6px;
+ background: rgba(255,255,255,.075);
+ color: rgba(242,244,239,.76);
+ font-size: 11px;
+ line-height: 1.4;
+ white-space: nowrap;
+}
+.developer-page .developer-project-card > h3 { margin-top: 28px; }
+.developer-page .developer-project-card > p { line-height: 1.75; }
+@media (max-width: 640px) {
+ .developer-page .developer-project-meta { align-items: flex-start; }
+ .developer-page .developer-project-status { max-width: 145px; }
+}
