@@ -14,7 +14,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://triplethread.agency";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://my-portfolio-puce-tau-56.vercel.app";
 const siteName = "Triple Thread Agency";
 const siteTitle = "Creative Design & Web Development in Ghana | Triple Thread Agency";
 const siteDescription =
