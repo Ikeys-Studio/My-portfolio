@@ -69,6 +69,8 @@ const principles = [
 const studies = [
   {
     number: "01",
+    discipline: "Creative design",
+    visualLabel: "Identity / 001",
     tag: "Brand system concept",
     title: "Thread / Identity",
     copy: "A modular identity study exploring how three distinct marks resolve into one system.",
@@ -76,6 +78,8 @@ const studies = [
   },
   {
     number: "02",
+    discipline: "Digital technology",
+    visualLabel: "Interface / 002",
     tag: "Interaction study",
     title: "Signal / Interface",
     copy: "A responsive interface study focused on clarity, motion, and considered interaction.",
@@ -83,6 +87,8 @@ const studies = [
   },
   {
     number: "03",
+    discipline: "Music & sound",
+    visualLabel: "Sonic / 003",
     tag: "Audio concept",
     title: "Resonance / Sound",
     copy: "A short sonic identity sketch translating a three-part idea into tone and texture.",
@@ -268,12 +274,12 @@ export default function Home() {
             <div className="section-heading section-heading--split">
               <div>
                 <p className="section-label">03 / Portfolio</p>
-                <h2 id="work-title">Explorations, not case studies.</h2>
+                <h2 id="work-title">Ideas, made visible.</h2>
               </div>
               <p className="section-heading__note">
-                Self-initiated studio studies that show how the three disciplines
-                intersect. These are concepts, not client projects — no client
-                work is represented here.
+                A growing collection of self-initiated explorations across
+                identity, digital experience, and sound. Each piece is a
+                creative study — not commissioned client work.
               </p>
             </div>
 
@@ -284,6 +290,7 @@ export default function Home() {
                     className={`work-card__visual work-card__visual--${study.art}`}
                     aria-hidden="true"
                   >
+                    <span className="work-card__visual-label">{study.visualLabel}</span>
                     {study.art === "design" && (
                       <>
                         <span className="art-circle" />
@@ -311,13 +318,23 @@ export default function Home() {
                     <span className="work-card__index">{study.number}</span>
                   </div>
                   <div className="work-card__body">
-                    <p className="work-card__tag">{study.tag}</p>
+                    <p className="work-card__tag">{study.discipline} / {study.tag}</p>
                     <h3>{study.title}</h3>
                     <p className="work-card__copy">{study.copy}</p>
-                    <p className="work-card__note">Self-initiated study</p>
+                    <p className="work-card__note">
+                      <span>Studio exploration</span>
+                      <span>Not commissioned work</span>
+                    </p>
                   </div>
                 </article>
               ))}
+            </div>
+
+            <div className="work__closing">
+              <p>Have a brief of your own?</p>
+              <a href="#contact">
+                Let&apos;s make something meaningful <span aria-hidden="true">↗</span>
+              </a>
             </div>
           </div>
         </section>
