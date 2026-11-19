@@ -336,7 +336,7 @@ export default function Home() {
               </div>
               <div>
                 <h2>Connect</h2>
-                <a href="mailto:hello@triplethread.agency">Email us</a>
+                <a href="mailto:triplethreadagency@gmail.com">Email us</a>
                 <a href="#top">Back to top ↑</a>
               </div>
             </div>
