@@ -139,7 +139,7 @@ export default function DeveloperPortfolioPage() {
 
       <footer className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-10 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>© {new Date().getFullYear()} Isaac Ghartey. Built with Next.js.</p>
+          <p>© 2026 Isaac Ghartey. Built with Next.js.</p>
           <div className="flex flex-wrap gap-5"><a className="hover:text-[#b8f36b]" href="/">Triple Thread Agency</a><a className="hover:text-[#b8f36b]" href="https://github.com/Ikeys-Studio" target="_blank" rel="noreferrer">GitHub ↗</a><a className="hover:text-[#b8f36b]" href="mailto:triplethreadagency@gmail.com">Email</a></div>
         </div>
       </footer>
