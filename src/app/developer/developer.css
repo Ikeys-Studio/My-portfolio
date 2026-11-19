@@ -1,0 +1,53 @@
+/* Dedicated layout rules for the Developer Portfolio.
+   These explicit rules keep the page structured even if utility CSS is delayed. */
+.developer-page { width: 100%; min-height: 100vh; overflow-x: clip; }
+.developer-page *, .developer-page *::before, .developer-page *::after { box-sizing: border-box; }
+.developer-page .developer-nav-inner,
+.developer-page .developer-footer-inner { width: min(100% - 48px, 1152px); margin-inline: auto; }
+.developer-page .developer-nav-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.developer-page .developer-nav { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 24px; }
+.developer-page .developer-nav a { white-space: nowrap; }
+.developer-page .developer-hero-inner { width: min(100% - 48px, 1152px); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr); align-items: center; gap: clamp(36px, 6vw, 88px); padding-block: clamp(76px, 10vw, 132px); }
+.developer-page .developer-hero-inner > div { min-width: 0; }
+.developer-page .developer-hero-inner h1 { max-width: 11ch; font-size: clamp(3.1rem, 6vw, 5.8rem); line-height: 1.02; letter-spacing: -.055em; }
+.developer-page .developer-hero-inner > div > p:not(:first-child) { max-width: 62ch; }
+.developer-page .developer-hero-inner aside { min-width: 0; }
+.developer-page #projects,
+.developer-page #skills,
+.developer-page #about { width: min(100% - 48px, 1152px); margin-inline: auto; }
+.developer-page .developer-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 36px; }
+.developer-page .developer-section-heading > p { max-width: 42ch; }
+.developer-page .developer-project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.developer-page .developer-project-card { min-width: 0; display: flex; flex-direction: column; padding: 28px; border: 1px solid rgba(255,255,255,.12); border-radius: 18px; background: rgba(255,255,255,.025); }
+.developer-page .developer-project-card h3 { overflow-wrap: anywhere; }
+.developer-page .developer-project-card p { overflow-wrap: break-word; }
+.developer-page .developer-skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.developer-page .developer-about { display: grid; grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 56px; align-items: start; }
+.developer-page .developer-footer-inner { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 24px; }
+.developer-page .developer-footer-inner > div { display: flex; flex-wrap: wrap; gap: 22px; }
+@media (max-width: 900px) {
+ .developer-page .developer-hero-inner { grid-template-columns: 1fr; }
+ .developer-page .developer-project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .developer-page .developer-skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+ .developer-page .developer-about { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 640px) {
+ .developer-page .developer-nav-inner,
+ .developer-page .developer-footer-inner,
+ .developer-page .developer-hero-inner,
+ .developer-page #projects,
+ .developer-page #skills,
+ .developer-page #about { width: min(100% - 36px, 100%); }
+ .developer-page .developer-nav-inner { min-height: 68px; align-items: flex-start; flex-direction: column; justify-content: center; gap: 12px; padding-block: 14px; }
+ .developer-page .developer-nav { width: 100%; justify-content: flex-start; gap: 12px 18px; font-size: 13px; }
+ .developer-page .developer-hero-inner { gap: 34px; padding-block: 64px; }
+ .developer-page .developer-hero-inner h1 { font-size: clamp(2.8rem, 13vw, 4.2rem); }
+ .developer-page .developer-section-heading { align-items: flex-start; flex-direction: column; gap: 16px; }
+ .developer-page .developer-project-grid,
+ .developer-page .developer-skills-grid { grid-template-columns: 1fr; }
+ .developer-page .developer-project-card { padding: 22px; }
+ .developer-page .developer-footer-inner { align-items: flex-start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+ .developer-page * { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
