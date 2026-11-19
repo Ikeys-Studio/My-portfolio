@@ -1,31 +1,57 @@
 "use client";
 
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 
-const CONTACT_EMAIL = "triplethreadagency@gmail.com";
+type SubmissionState = "idle" | "sending" | "success" | "error";
+
+type ApiResponse = { message?: string };
 
 export default function ContactForm() {
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<SubmissionState>("idle");
+  const [feedback, setFeedback] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (status === "sending") return;
 
-    const data = new FormData(event.currentTarget);
-    const name = String(data.get("name") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const interest = String(data.get("interest") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
+    const form = event.currentTarget;
+    const data = new FormData(form);
 
-    const subject = `Project inquiry — ${interest}`;
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Interested in: ${interest}`,
-      "",
-      message,
-    ].join("\n");
+    const payload = {
+      name: String(data.get("name") ?? "").trim(),
+      email: String(data.get("email") ?? "").trim(),
+      interest: String(data.get("interest") ?? ""),
+      message: String(data.get("message") ?? "").trim(),
+      company: String(data.get("company") ?? ""),
+    };
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    setStatus("sending");
+    setFeedback("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json()) as ApiResponse;
+
+      if (!response.ok) {
+        throw new Error(result.message || "We couldn't send your enquiry. Please try again.");
+      }
+
+      form.reset();
+      setStatus("success");
+      setFeedback(result.message || "Your enquiry has been sent successfully.");
+    } catch (error) {
+      setStatus("error");
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again or email us directly.",
+      );
+    }
   };
 
   return (
@@ -39,6 +65,8 @@ export default function ContactForm() {
             type="text"
             autoComplete="name"
             placeholder="Jane Doe"
+            minLength={2}
+            maxLength={100}
             required
           />
         </div>
@@ -50,6 +78,7 @@ export default function ContactForm() {
             type="email"
             autoComplete="email"
             placeholder="jane@company.com"
+            maxLength={254}
             required
           />
         </div>
@@ -76,19 +105,49 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={5}
+          minLength={10}
+          maxLength={5000}
           placeholder="A few sentences about what you're building..."
           required
         />
       </div>
 
-      <button className="btn btn--primary contact-form__submit" type="submit">
-        Send inquiry
-        <span aria-hidden="true">↗</span>
+      <div className="contact-form__honeypot" aria-hidden="true">
+        <label htmlFor="company">Leave this field empty</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
+      <button
+        className="btn btn--primary contact-form__submit"
+        type="submit"
+        disabled={status === "sending"}
+        aria-busy={status === "sending"}
+      >
+        {status === "sending" ? "Sending enquiry…" : "Send enquiry"}
+        {status !== "sending" && <span aria-hidden="true">↗</span>}
       </button>
 
+      <p
+        className={`contact-form__feedback${status === "success" ? " is-success" : ""}`}
+        role="status"
+        aria-live="polite"
+      >
+        {feedback}
+      </p>
+
       <p className="contact-form__note">
-        Submitting opens your email app with the message ready to send. Nothing
-        is stored on this site.
+        Your details are used only to respond to this project enquiry. You can
+        also reach us at{" "}
+        <a href="mailto:triplethreadagency@gmail.com">
+          triplethreadagency@gmail.com
+        </a>
+        .
       </p>
     </form>
   );
