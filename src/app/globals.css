@@ -390,6 +390,37 @@ a {
 .thread--two { animation-delay: 0.18s; }
 .thread--three { animation-delay: 0.36s; }
 
+.threads-visual__stamp {
+  position: absolute;
+  z-index: 2;
+  top: 8%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--muted);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.threads-visual__stamp-code {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.threads-visual__caption {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .threads-visual__legend {
   display: flex;
   justify-content: space-between;
