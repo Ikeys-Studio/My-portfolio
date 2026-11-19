@@ -1395,3 +1395,80 @@ a {
     transition: none;
   }
 }
+
+
+/* Music & Sound --------------------------------------------------------- */
+.music {
+  background: var(--background-raised);
+}
+
+.music__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(40px, 8vw, 110px);
+}
+
+.music__intro h2 {
+  margin: 0 0 24px;
+  font-size: clamp(2.6rem, 5vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.music__intro > p:last-child {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.music__placeholder {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at 85% 10%, rgba(184, 243, 107, 0.09), transparent 48%),
+    var(--background);
+}
+
+.music__placeholder-mark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 34px;
+  border: 1px solid rgba(184, 243, 107, 0.3);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 28px;
+}
+
+.music__placeholder h3 {
+  max-width: 16ch;
+  margin: 0 0 14px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+}
+
+.music__placeholder > p:not(.work-card__tag) {
+  max-width: 48ch;
+  margin: 0 0 26px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+@media (max-width: 860px) {
+  .music__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .music__intro h2 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+}
