@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import BrandMark from "./BrandMark";
 
 const links = [
+  { href: "#top", label: "Home" },
   { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
-  { href: "#work", label: "Portfolio" },
+  { href: "#work", label: "Work" },
+  { href: "#music-sound", label: "Music & Sound" },
   { href: "#contact", label: "Contact" },
 ];
 
