@@ -1325,3 +1325,73 @@ a {
     stroke-dashoffset: 0;
   }
 }
+
+
+/* Finishing details ----------------------------------------------------- */
+.hero__title,
+.section-heading h2,
+.contact__intro h2 {
+  text-wrap: balance;
+}
+
+.hero__lead,
+.section-heading__note,
+.about__copy > p,
+.service-card > p,
+.work-card__copy {
+  text-wrap: pretty;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.field input:focus-visible,
+.field select:focus-visible,
+.field textarea:focus-visible {
+  box-shadow: 0 0 0 3px rgba(184, 243, 107, 0.12);
+}
+
+.contact-form {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.16);
+}
+
+@media (hover: hover) {
+  .service-card:hover {
+    background: linear-gradient(
+      155deg,
+      rgba(184, 243, 107, 0.055),
+      rgba(255, 255, 255, 0.012) 62%
+    );
+  }
+
+  .work-card:hover .work-card__visual {
+    background-color: #191d18;
+  }
+
+  .work-card:hover .art-circle {
+    transform: translateX(-18px) scale(1.06);
+  }
+
+  .work-card:hover .art-square {
+    transform: rotate(18deg) translateX(28px) scale(1.06);
+  }
+
+  .work-card:hover .art-window {
+    transform: translateY(-4px);
+  }
+
+  .art-circle,
+  .art-square,
+  .art-window {
+    transition: transform 0.35s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art-circle,
+  .art-square,
+  .art-window {
+    transition: none;
+  }
+}
