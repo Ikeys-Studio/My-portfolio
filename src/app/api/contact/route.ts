@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 
-export const runtime = "nodejs";
-
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 const CONTACT_EMAIL = "triplethreadagency@gmail.com";
 const ALLOWED_INTERESTS = new Set([
