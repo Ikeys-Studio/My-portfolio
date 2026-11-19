@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./developer.css";
 
 export const metadata: Metadata = {
   title: "Developer Portfolio",
@@ -59,13 +60,13 @@ const skills = [
 
 export default function DeveloperPortfolioPage() {
   return (
-    <main id="main" className="min-h-screen bg-[#101110] text-[#f2f4ef]">
+    <main id="main" className="developer-page min-h-screen bg-[#101110] text-[#f2f4ef]">
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#101110]/90 backdrop-blur-xl">
-        <div className="mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
+        <div className="developer-nav-inner mx-auto flex min-h-[72px] max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
           <a href="/" className="font-semibold tracking-tight">
             <span className="text-[#b8f36b]">ISAAC</span> GHARTEY
           </a>
-          <nav aria-label="Developer portfolio navigation" className="flex items-center gap-5 text-sm text-white/65">
+          <nav aria-label="Developer portfolio navigation" className="developer-nav flex items-center gap-5 text-sm text-white/65">
             <a className="transition hover:text-[#b8f36b]" href="#projects">Projects</a>
             <a className="transition hover:text-[#b8f36b]" href="#skills">Skills</a>
             <a className="transition hover:text-[#b8f36b]" href="#about">About</a>
@@ -76,7 +77,7 @@ export default function DeveloperPortfolioPage() {
 
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="pointer-events-none absolute inset-0 opacity-40" style={{ backgroundImage: "linear-gradient(rgba(242,244,239,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(242,244,239,.045) 1px, transparent 1px)", backgroundSize: "56px 56px", maskImage: "linear-gradient(to bottom, black, transparent)" }} />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
+        <div className="developer-hero-inner relative mx-auto grid max-w-6xl gap-12 px-5 py-24 sm:px-8 sm:py-32 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
           <div>
             <p className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.22em] text-white/50"><span className="h-2 w-2 rounded-full bg-[#b8f36b]" /> Web developer · Ghana</p>
             <h1 className="max-w-3xl text-5xl font-medium leading-[1.04] tracking-[-.055em] sm:text-7xl">I build thoughtful <span className="text-[#b8f36b]">digital experiences.</span></h1>
@@ -99,13 +100,13 @@ export default function DeveloperPortfolioPage() {
       </section>
 
       <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
-        <div className="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div className="developer-section-heading mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div><p className="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-[#b8f36b]">Selected work</p><h2 className="text-4xl font-medium tracking-[-.045em] sm:text-5xl">Projects in progress.</h2></div>
           <p className="max-w-md text-sm leading-7 text-white/55">A selection of self-initiated projects that demonstrate what I’m learning and building. Project status is stated clearly.</p>
         </div>
-        <div className="grid gap-5 lg:grid-cols-3">
+        <div className="developer-project-grid grid gap-5 lg:grid-cols-3">
           {projects.map((project) => (
-            <article key={project.number} className="flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[.025] p-6 transition hover:-translate-y-1 hover:border-[#b8f36b]/40 sm:p-7">
+            <article key={project.number} className="developer-project-card flex min-w-0 flex-col rounded-2xl border border-white/10 bg-white/[.025] p-6 transition hover:-translate-y-1 hover:border-[#b8f36b]/40 sm:p-7">
               <div className="flex items-center justify-between gap-3"><span className="text-xs tracking-[.16em] text-white/35">{project.number} / PROJECT</span><span className="rounded-full border border-[#b8f36b]/25 px-3 py-1 text-[10px] uppercase tracking-wider text-[#b8f36b]">{project.status}</span></div>
               <h3 className="mt-10 text-2xl font-medium tracking-tight">{project.name}</h3>
               <p className="mt-4 flex-1 text-sm leading-7 text-white/60">{project.description}</p>
@@ -122,13 +123,13 @@ export default function DeveloperPortfolioPage() {
         <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-[#b8f36b]">Technical toolkit</p>
           <h2 className="mb-12 text-4xl font-medium tracking-[-.045em] sm:text-5xl">Tools I work with.</h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="developer-skills-grid grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {skills.map(([category, ...items]) => <div key={category} className="border-t border-white/15 pt-5"><h3 className="mb-5 text-lg font-medium">{category}</h3><ul className="space-y-3">{items.map((item) => <li key={item} className="text-sm text-white/55">{item}</li>)}</ul></div>)}
           </div>
         </div>
       </section>
 
-      <section id="about" className="mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[.7fr_1.3fr]">
+      <section id="about" className="developer-about mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[.7fr_1.3fr]">
         <div><p className="mb-4 text-xs font-semibold uppercase tracking-[.2em] text-[#b8f36b]">A little about me</p><h2 className="text-4xl font-medium tracking-[-.045em] sm:text-5xl">Curious by nature. Building by practice.</h2></div>
         <div className="space-y-5 text-base leading-8 text-white/60">
           <p>I’m developing my skills through hands-on projects, documentation and continuous practice. My background in General Science at Winneba Senior High School, completed in 2025, taught me to approach problems with curiosity and structured thinking.</p>
@@ -138,7 +139,7 @@ export default function DeveloperPortfolioPage() {
       </section>
 
       <footer className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-10 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <div className="developer-footer-inner mx-auto flex max-w-6xl flex-col gap-5 px-5 py-10 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <p>© 2026 Isaac Ghartey. Built with Next.js.</p>
           <div className="flex flex-wrap gap-5"><a className="hover:text-[#b8f36b]" href="/">Triple Thread Agency</a><a className="hover:text-[#b8f36b]" href="https://github.com/Ikeys-Studio" target="_blank" rel="noreferrer">GitHub ↗</a><a className="hover:text-[#b8f36b]" href="mailto:triplethreadagency@gmail.com">Email</a></div>
         </div>
