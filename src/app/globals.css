@@ -2007,3 +2007,26 @@ a {
     padding-inline: 14px;
   }
 }
+
+/* Laptop pricing layout ------------------------------------------------- */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .pricing__grid,
+  .pricing__grid--bundles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .price-card {
+    padding: 30px;
+  }
+
+  .price-card__cta {
+    min-height: 56px;
+    font-size: 13px;
+  }
+
+  .pricing__terms-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
