@@ -287,6 +287,41 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Music & Sound */}
+        <section
+          className="section music"
+          id="music-sound"
+          aria-labelledby="music-title"
+        >
+          <div className="container music__inner">
+            <div className="music__intro">
+              <p className="section-label">04 / Music &amp; Sound</p>
+              <h2 id="music-title">
+                Sound is part
+                <br />
+                <span className="accent-text">of the story.</span>
+              </h2>
+              <p>
+                From original music and production to sound design and sonic
+                identity, we treat audio as an essential part of the creative
+                experience.
+              </p>
+            </div>
+            <div className="music__placeholder">
+              <span className="music__placeholder-mark" aria-hidden="true">♪</span>
+              <p className="work-card__tag">Studio playlist / coming soon</p>
+              <h3>Our sound library is taking shape.</h3>
+              <p>
+                Finished productions and selected audio work will appear here.
+                We are keeping this space open until there is work ready to hear.
+              </p>
+              <a className="btn btn--outline" href="#contact">
+                Discuss a sound project <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section
           className="section contact"
@@ -295,7 +330,7 @@ export default function Home() {
         >
           <div className="container contact__inner">
             <div className="contact__intro">
-              <p className="section-label">04 / Contact</p>
+              <p className="section-label">05 / Contact</p>
               <h2 id="contact-title">
                 Let&apos;s connect
                 <br />
@@ -331,7 +366,7 @@ export default function Home() {
                 <h2>Explore</h2>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#work">Portfolio</a>
+                <a href="#work">Work</a>\n                <a href="#music-sound">Music &amp; Sound</a>
                 <a href="#contact">Contact</a>
               </div>
               <div>
