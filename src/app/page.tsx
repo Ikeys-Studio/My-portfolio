@@ -366,7 +366,8 @@ export default function Home() {
                 <h2>Explore</h2>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#work">Work</a>\n                <a href="#music-sound">Music &amp; Sound</a>
+                <a href="#work">Work</a>
+                <a href="#music-sound">Music &amp; Sound</a>
                 <a href="#contact">Contact</a>
               </div>
               <div>
