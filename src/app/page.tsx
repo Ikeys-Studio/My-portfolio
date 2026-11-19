@@ -112,7 +112,8 @@ const bundles = [
   { name: "Brand & Digital Growth", price: "GH₵6,500", featured: true, description: "For businesses ready to look consistent and compete online.", features: ["Professional brand identity", "Up to 7-page business website", "8 social media designs", "Basic SEO and analytics setup"] },
   { name: "Complete Creative Experience", price: "GH₵9,500", description: "A connected brand, digital and audio package.", features: ["Premium brand system", "Up to 10-page premium website", "12 social media designs", "One custom audio logo or short jingle", "60 days post-launch support"] },
 ] as const;
-\nconst principles = [
+
+const principles = [
   {
     title: "Strategy before style",
     copy: "Every decision starts with the problem, not the aesthetic.",
