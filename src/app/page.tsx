@@ -582,6 +582,60 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Frequently asked questions */}
+        <section className="section faq" id="faq" aria-labelledby="faq-title">
+          <div className="container">
+            <div className="section-heading section-heading--split">
+              <div>
+                <p className="section-label">06 / Before we begin</p>
+                <h2 id="faq-title">A few things <span className="accent-text">worth knowing.</span></h2>
+              </div>
+              <p className="section-heading__note">
+                Straight answers to common questions about working with Triple Thread Agency.
+                If something is not covered here, send us an enquiry and we will clarify it.
+              </p>
+            </div>
+            <div className="faq__list">
+              <details className="faq__item">
+                <summary>How do I get started with a project?</summary>
+                <p>Send an enquiry through the contact form or WhatsApp. Tell us what you need, what you are aiming to achieve, your budget and your preferred timeline. We will review the brief and follow up to discuss the scope and next steps.</p>
+              </details>
+              <details className="faq__item">
+                <summary>Are the prices on the website fixed?</summary>
+                <p>The listed prices apply to the deliverables and scope described in each package. If your project needs additional pages, features, assets or services, we will discuss the requirements and provide a tailored quote before the extra work begins.</p>
+              </details>
+              <details className="faq__item">
+                <summary>How does payment work?</summary>
+                <p>Our standard project payment schedule is 60% to confirm the booking, 30% at the agreed milestone, and the final 10% before handover or launch. Any different arrangement must be agreed in writing before work starts.</p>
+              </details>
+              <details className="faq__item">
+                <summary>How long will my project take?</summary>
+                <p>Timing depends on the project scope, feedback and the materials supplied. We confirm the working timeline after reviewing and approving the brief. Your project schedule and milestones will be agreed before production begins.</p>
+              </details>
+              <details className="faq__item">
+                <summary>Can I request changes during the project?</summary>
+                <p>Yes. Each package includes the revision rounds listed in its description. We work through feedback at the agreed milestones. Requests that go beyond the included rounds or change the approved scope may require an additional quote.</p>
+              </details>
+              <details className="faq__item">
+                <summary>Are hosting, domains and third-party costs included?</summary>
+                <p>Unless a package explicitly says otherwise, domain registration, hosting, paid plugins, stock assets, advertising spend, payment-provider fees and other third-party costs are separate. We will identify relevant costs during scoping.</p>
+              </details>
+              <details className="faq__item">
+                <summary>Can I combine design, website and music services?</summary>
+                <p>Absolutely. Triple Thread Agency brings Creative Design, Digital Technology, and Music &amp; Sound together. You can choose one service, select a connected bundle, or ask us to shape a coordinated proposal around your brief.</p>
+              </details>
+              <details className="faq__item">
+                <summary>Do you work with clients outside Ghana?</summary>
+                <p>Yes. We are based in Ghana and can discuss suitable projects with clients elsewhere. The brief, communication plan, delivery requirements and any applicable third-party costs will be agreed before work begins.</p>
+              </details>
+            </div>
+            <div className="faq__closing">
+              <p>Still have a question?</p>
+              <a className="btn btn--outline" href="#contact">Talk to the studio <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section
           className="section contact"
@@ -590,7 +644,7 @@ export default function Home() {
         >
           <div className="container contact__inner">
             <div className="contact__intro">
-              <p className="section-label">06 / Contact</p>
+              <p className="section-label">07 / Contact</p>
               <h2 id="contact-title">
                 Let&apos;s connect
                 <br />
@@ -651,6 +705,7 @@ export default function Home() {
                 <a href="#pricing">Pricing</a>
                 <a href="#work">Work</a>
                 <a href="#music-sound">Music &amp; Sound</a>
+                <a href="#faq">FAQs</a>
                 <a href="#contact">Contact</a>
               </div>
               <div>
