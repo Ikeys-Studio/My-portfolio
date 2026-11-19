@@ -1681,47 +1681,203 @@ a {
   line-height: 1.8;
 }
 
-.music__placeholder {
-  position: relative;
+.music__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--accent);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.music__contact-link span {
+  color: var(--accent);
+  transition: transform 0.2s ease;
+}
+
+.music__contact-link:hover,
+.music__contact-link:focus-visible {
+  color: var(--accent);
+}
+
+.music__contact-link:hover span,
+.music__contact-link:focus-visible span {
+  transform: translate(3px, -3px);
+}
+
+.music__feature {
   overflow: hidden;
-  padding: clamp(28px, 4vw, 48px);
   border: 1px solid var(--line);
   border-radius: 16px;
-  background:
-    radial-gradient(ellipse at 85% 10%, rgba(184, 243, 107, 0.09), transparent 48%),
-    var(--background);
+  background: var(--background);
 }
 
-.music__placeholder-mark {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  margin-bottom: 34px;
-  border: 1px solid rgba(184, 243, 107, 0.3);
+.music__feature-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.music__eyebrow,
+.music__status,
+.music__sound-index {
+  font-family: var(--font-heading), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.music__eyebrow {
+  color: var(--muted);
+}
+
+.music__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.music__status i {
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  color: var(--accent);
-  font-size: 28px;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(184, 243, 107, 0.1);
 }
 
-.music__placeholder h3 {
-  max-width: 16ch;
-  margin: 0 0 14px;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+.music__sound-art {
+  position: relative;
+  display: grid;
+  min-height: 230px;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 55%, rgba(184, 243, 107, 0.13), transparent 52%),
+    linear-gradient(rgba(242, 244, 239, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(242, 244, 239, 0.035) 1px, transparent 1px),
+    #141614;
+  background-size: auto, 28px 28px, 28px 28px, auto;
+}
+
+.music__sound-orbit {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(184, 243, 107, 0.18);
+  border-radius: 50%;
+}
+
+.music__sound-orbit--two {
+  width: 270px;
+  height: 270px;
+  border-color: rgba(242, 244, 239, 0.09);
+}
+
+.music__waveform {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: min(78%, 390px);
+  height: 104px;
+}
+
+.music__waveform i {
+  display: block;
+  flex: 1;
+  max-width: 5px;
+  min-height: 5px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, var(--accent), rgba(184, 243, 107, 0.22));
+  opacity: 0.85;
+}
+
+.music__sound-index {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  color: rgba(242, 244, 239, 0.48);
+}
+
+.music__feature-copy {
+  padding: 26px 28px 30px;
+}
+
+.music__feature-copy .work-card__tag {
+  margin-bottom: 10px;
+}
+
+.music__feature-copy h3 {
+  margin: 0 0 10px;
+  font-size: clamp(1.45rem, 2.5vw, 1.9rem);
   font-weight: 500;
 }
 
-.music__placeholder > p:not(.work-card__tag) {
+.music__feature-copy > p:last-child {
   max-width: 48ch;
-  margin: 0 0 26px;
+  margin: 0;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.music__services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.music__service {
+  padding: 24px 24px 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.music__service > span {
+  color: var(--accent);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.music__service h3 {
+  margin: 16px 0 9px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.music__service p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
 }
 
 @media (max-width: 860px) {
   .music__inner {
     grid-template-columns: 1fr;
+  }
+
+  .music__services {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
