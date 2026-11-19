@@ -636,6 +636,63 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Trust & working process */}
+        <section className="section trust" id="how-we-work" aria-labelledby="trust-title">
+          <div className="container">
+            <div className="section-heading section-heading--split">
+              <div>
+                <p className="section-label">07 / The way we work</p>
+                <h2 id="trust-title">Good work starts <span className="accent-text">with clarity.</span></h2>
+              </div>
+              <p className="section-heading__note">
+                A considered process makes creative work easier to understand, plan and move forward.
+                Here is what you can expect when you work with our studio.
+              </p>
+            </div>
+
+            <div className="trust__principles">
+              <article className="trust-card">
+                <span className="trust-card__number">01</span>
+                <h3>Scope you can understand</h3>
+                <p>We define the deliverables, project boundaries and timeline with you before production begins. Additional work is discussed and quoted separately.</p>
+              </article>
+              <article className="trust-card">
+                <span className="trust-card__number">02</span>
+                <h3>Transparent investment</h3>
+                <p>Package prices are published in Ghana cedis, with staged payments and third-party costs explained before you commit.</p>
+              </article>
+              <article className="trust-card">
+                <span className="trust-card__number">03</span>
+                <h3>Clear feedback points</h3>
+                <p>Each package sets out its included revision rounds, so feedback and changes have an agreed place in the process.</p>
+              </article>
+              <article className="trust-card">
+                <span className="trust-card__number">04</span>
+                <h3>Honest work, clear handover</h3>
+                <p>Our portfolio identifies self-initiated studies as concepts. Project files and final deliverables are handed over according to the agreed scope and payment terms.</p>
+              </article>
+            </div>
+
+            <div className="trust__process">
+              <div className="trust__process-heading">
+                <p className="section-label">FROM FIRST MESSAGE TO HANDOVER</p>
+                <h3>A straightforward four-step process.</h3>
+              </div>
+              <ol className="trust__steps">
+                <li><span>01</span><div><h4>Listen &amp; understand</h4><p>We learn about your goals, audience, requirements, budget and timing.</p></div></li>
+                <li><span>02</span><div><h4>Agree the plan</h4><p>We confirm the deliverables, quote, milestones and working schedule.</p></div></li>
+                <li><span>03</span><div><h4>Create &amp; refine</h4><p>We develop the work and gather feedback at the agreed review points.</p></div></li>
+                <li><span>04</span><div><h4>Deliver &amp; hand over</h4><p>We complete the agreed final files, access and handover after the project terms are met.</p></div></li>
+              </ol>
+            </div>
+
+            <div className="trust__note">
+              <p><strong>Prefer to know the details first?</strong> Review the packages, payment terms and FAQs before sending an enquiry.</p>
+              <div><a href="#pricing">View pricing <span aria-hidden="true">↗</span></a><a href="#faq">Read FAQs <span aria-hidden="true">↗</span></a></div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact */}
         <section
           className="section contact"
@@ -644,7 +701,7 @@ export default function Home() {
         >
           <div className="container contact__inner">
             <div className="contact__intro">
-              <p className="section-label">07 / Contact</p>
+              <p className="section-label">08 / Contact</p>
               <h2 id="contact-title">
                 Let&apos;s connect
                 <br />
@@ -706,6 +763,7 @@ export default function Home() {
                 <a href="#work">Work</a>
                 <a href="#music-sound">Music &amp; Sound</a>
                 <a href="#faq">FAQs</a>
+                <a href="#how-we-work">How we work</a>
                 <a href="#contact">Contact</a>
               </div>
               <div>
