@@ -52,6 +52,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a href="/developer" onClick={() => setOpen(false)}>Developer Portfolio</a>
           <a
             className="btn btn--primary btn--small nav__mobile-cta"
             href="#contact"
