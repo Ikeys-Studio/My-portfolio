@@ -833,6 +833,17 @@ a {
   letter-spacing: 0.1em;
 }
 
+.work-card__visual-label {
+  position: absolute;
+  right: 20px;
+  bottom: 18px;
+  color: rgba(242, 244, 239, 0.58);
+  font-family: var(--font-heading), sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .work-card__visual--design {
   background:
     radial-gradient(circle at 70% 25%, rgba(184, 243, 107, 0.12), transparent 55%),
@@ -976,13 +987,66 @@ a {
 }
 
 .work-card__note {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 14px;
   margin: 0;
   padding-top: 18px;
   border-top: 1px solid var(--line);
   color: var(--muted);
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
+}
+
+.work-card__note span:first-child {
+  color: var(--accent);
+}
+
+.work__closing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 34px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(100deg, rgba(184, 243, 107, 0.055), transparent 75%);
+}
+
+.work__closing p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.work__closing a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.work__closing a span {
+  color: var(--accent);
+  font-size: 18px;
+  transition: transform 0.2s ease;
+}
+
+.work__closing a:hover,
+.work__closing a:focus-visible {
+  color: var(--accent);
+}
+
+.work__closing a:hover span,
+.work__closing a:focus-visible span {
+  transform: translate(3px, -3px);
 }
 
 /* Contact --------------------------------------------------------------- */
@@ -1465,6 +1529,13 @@ a {
 
   .work-card__visual {
     height: 230px;
+  }
+
+  .work__closing {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 22px;
   }
 
   .contact__intro h2 {
