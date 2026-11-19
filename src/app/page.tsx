@@ -51,7 +51,68 @@ const disciplines = [
   },
 ] as const;
 
-const principles = [
+
+const pricingGroups = [
+  {
+    number: "01",
+    title: "Creative Design",
+    intro: "Build a visual identity people recognise and remember.",
+    packages: [
+      { name: "Essential Identity", price: "GH₵1,200", description: "A focused logo foundation for a new business.", features: ["Primary logo and alternate version", "Colour palette and typography", "Basic logo usage sheet", "2 revision rounds"] },
+      { name: "Professional Identity", price: "GH₵2,500", featured: true, description: "A cohesive identity system ready for everyday business use.", features: ["Complete logo suite", "Colour and typography system", "Business card and letterhead designs", "Brand guidelines document", "3 revision rounds"] },
+      { name: "Premium Brand System", price: "GH₵4,000", description: "A more complete brand world with practical applications.", features: ["Everything in Professional Identity", "Social media template set", "Additional brand applications", "Extended brand guidelines", "3 revision rounds"] },
+    ],
+  },
+  {
+    number: "02",
+    title: "Digital Technology",
+    intro: "Turn your business goals into clear, responsive digital experiences.",
+    packages: [
+      { name: "Launch Website", price: "GH₵2,500", description: "A polished online starting point for a new business.", features: ["Up to 3 pages", "Responsive mobile and desktop layout", "Contact form and WhatsApp link", "Social links and basic SEO", "2 revision rounds"] },
+      { name: "Business Website", price: "GH₵4,500", featured: true, description: "A complete business presence built to support enquiries.", features: ["Up to 7 pages", "Custom responsive design", "Enquiry form and lead capture", "Basic SEO, sitemap and analytics setup", "2 revision rounds", "30 days post-launch support"] },
+      { name: "Premium Website", price: "GH₵6,500", description: "A richer digital experience for growing organisations.", features: ["Up to 10 pages", "Custom UI and interactive sections", "Blog or CMS setup where suitable", "Advanced on-page SEO setup", "Performance optimisation", "60 days post-launch support"] },
+      { name: "E-commerce Website", price: "GH₵8,500", description: "A practical online store for selling products.", features: ["Product catalogue and categories", "Shopping cart and checkout", "One payment gateway integration", "Order management basics", "Responsive design and product SEO", "Client handover session"] },
+    ],
+  },
+  {
+    number: "03",
+    title: "Music & Sound",
+    intro: "Give your brand, content and creative projects a distinctive sound.",
+    packages: [
+      { name: "Music Production", price: "GH₵1,500", description: "A custom-produced song or instrumental arrangement.", features: ["One original production", "Arrangement and sound selection", "One approved revision round", "Final stereo WAV and MP3"] },
+      { name: "Mix & Master", price: "GH₵700", featured: true, description: "A finished stereo release from supplied multitrack stems.", features: ["Multitrack mix of up to 24 stems", "Stereo mastering", "One revision round", "Final WAV and MP3 delivery"] },
+      { name: "Sonic Starter", price: "GH₵800", description: "A short original audio identity for a brand or campaign.", features: ["One short audio logo or jingle", "Custom sound direction", "One revision round", "Final WAV and MP3 delivery"] },
+    ],
+  },
+] as const;
+
+const addOnPrices = [
+  { name: "Single promotional graphic", price: "GH₵200" },
+  { name: "Event branding design", price: "GH₵700" },
+  { name: "Company profile design", price: "GH₵900" },
+  { name: "Landing page UI design", price: "GH₵800" },
+  { name: "Website UI/UX design (up to 5 screens)", price: "GH₵1,800" },
+  { name: "Mobile app UI/UX (up to 8 screens)", price: "GH₵2,500" },
+  { name: "Bass or keyboard session recording", price: "GH₵300" },
+  { name: "Podcast intro / outro", price: "GH₵500" },
+  { name: "Voice-over editing", price: "GH₵300" },
+];
+
+const retainers = [
+  { name: "Social Design Starter", price: "GH₵600", detail: "8 designed posts per month" },
+  { name: "Social Design Growth", price: "GH₵1,000", detail: "12 designed posts and 4 story designs per month" },
+  { name: "Social Design Premium", price: "GH₵1,600", detail: "16 designed posts, 8 story designs and campaign graphics per month" },
+  { name: "Website Care Essential", price: "GH₵300", detail: "Routine updates and basic monthly checks" },
+  { name: "Website Care Business", price: "GH₵500", detail: "Updates, backups and agreed content changes" },
+  { name: "Website Care Premium", price: "GH₵800", detail: "Priority maintenance and expanded monthly support" },
+];
+
+const bundles = [
+  { name: "Business Launch", price: "GH₵3,500", description: "For entrepreneurs building a confident first presence.", features: ["Essential brand identity", "Up to 3-page launch website", "Social profile graphics", "Contact and WhatsApp integration"] },
+  { name: "Brand & Digital Growth", price: "GH₵6,500", featured: true, description: "For businesses ready to look consistent and compete online.", features: ["Professional brand identity", "Up to 7-page business website", "8 social media designs", "Basic SEO and analytics setup"] },
+  { name: "Complete Creative Experience", price: "GH₵9,500", description: "A connected brand, digital and audio package.", features: ["Premium brand system", "Up to 10-page premium website", "12 social media designs", "One custom audio logo or short jingle", "60 days post-launch support"] },
+] as const;
+\nconst principles = [
   {
     title: "Strategy before style",
     copy: "Every decision starts with the problem, not the aesthetic.",
@@ -272,12 +333,101 @@ export default function Home() {
           </div>
         </section>
 
+
+        {/* Pricing */}
+        <section className="section pricing" id="pricing" aria-labelledby="pricing-title">
+          <div className="container">
+            <div className="section-heading section-heading--split">
+              <div>
+                <p className="section-label">03 / Investment</p>
+                <h2 id="pricing-title">Clear scope. <span className="accent-text">Clear pricing.</span></h2>
+              </div>
+              <p className="section-heading__note">
+                Thoughtful creative work, with straightforward package prices in Ghana cedis.
+                Choose a package to get started; if your brief needs something different, we can shape a tailored proposal.
+              </p>
+            </div>
+
+            {pricingGroups.map((group) => (
+              <div className="pricing__discipline" key={group.number}>
+                <div className="pricing__discipline-heading">
+                  <span>{group.number} / 03</span>
+                  <div><h3>{group.title}</h3><p>{group.intro}</p></div>
+                </div>
+                <div className="pricing__grid">
+                  {group.packages.map((item) => (
+                    <article className={`price-card${"featured" in item && item.featured ? " price-card--featured" : ""}`} key={item.name}>
+                      {"featured" in item && item.featured && <span className="price-card__badge">Popular choice</span>}
+                      <h4>{item.name}</h4>
+                      <p className="price-card__description">{item.description}</p>
+                      <p className="price-card__amount">{item.price}<span> / project</span></p>
+                      <ul>{item.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+                      <a className="btn btn--outline price-card__cta" href={`#contact`} aria-label={`Enquire about ${item.name}`}>Choose this package <span aria-hidden="true">↗</span></a>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+            <div className="pricing__extras">
+              <div className="pricing__extras-heading">
+                <p className="section-label">À LA CARTE</p>
+                <h3>Individual services</h3>
+                <p>For focused requests that do not need a full package.</p>
+              </div>
+              <div className="pricing__list">
+                {addOnPrices.map((item) => <div className="pricing__list-row" key={item.name}><span>{item.name}</span><strong>{item.price}</strong></div>)}
+              </div>
+            </div>
+
+            <div className="pricing__extras">
+              <div className="pricing__extras-heading">
+                <p className="section-label">ONGOING PARTNERSHIPS</p>
+                <h3>Monthly support</h3>
+                <p>Consistent creative and website care for businesses that need ongoing support.</p>
+              </div>
+              <div className="retainer-grid">
+                {retainers.map((item) => <article className="retainer-card" key={item.name}><h4>{item.name}</h4><strong>{item.price}<span> / month</span></strong><p>{item.detail}</p></article>)}
+              </div>
+            </div>
+
+            <div className="pricing__bundles">
+              <div className="section-heading section-heading--split">
+                <div><p className="section-label">CONNECTED SOLUTIONS</p><h3>More than one thread.</h3></div>
+                <p className="section-heading__note">Combine disciplines in one coordinated project and get a more connected result.</p>
+              </div>
+              <div className="pricing__grid pricing__grid--bundles">
+                {bundles.map((item) => (
+                  <article className={`price-card price-card--bundle${"featured" in item && item.featured ? " price-card--featured" : ""}`} key={item.name}>
+                    {"featured" in item && item.featured && <span className="price-card__badge">Best balance</span>}
+                    <h4>{item.name}</h4><p className="price-card__description">{item.description}</p>
+                    <p className="price-card__amount">{item.price}<span> / project</span></p>
+                    <ul>{item.features.map((feature) => <li key={feature}>{feature}</li>)}</ul>
+                    <a className="btn btn--outline price-card__cta" href="#contact">Enquire about this bundle <span aria-hidden="true">↗</span></a>
+                  </article>
+                ))}
+              </div>
+            </div>
+
+            <div className="pricing__terms">
+              <h3>How projects work</h3>
+              <div className="pricing__terms-grid">
+                <p><strong>60% to begin</strong><span>Confirms your booking and project slot.</span></p>
+                <p><strong>30% at milestone</strong><span>Due after the agreed design or development milestone.</span></p>
+                <p><strong>10% before handover</strong><span>Final payment is due before delivery of final files or launch.</span></p>
+                <p><strong>Clear scope</strong><span>Each package has defined deliverables and revision rounds. Extra work is quoted separately.</span></p>
+              </div>
+              <p className="pricing__fineprint">All prices are in Ghana cedis (GH₵). Package prices cover the listed scope only. Domain registration, hosting, paid plugins, stock assets, advertising spend, payment-provider fees and other third-party costs are not included unless stated in writing. Project timelines are confirmed after the brief is approved. Quotes are valid for 14 days. Rush delivery, where available, is quoted separately.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Portfolio */}
         <section className="section work" id="work" aria-labelledby="work-title">
           <div className="container">
             <div className="section-heading section-heading--split">
               <div>
-                <p className="section-label">03 / Portfolio</p>
+                <p className="section-label">04 / Portfolio</p>
                 <h2 id="work-title">Ideas, made visible.</h2>
               </div>
               <p className="section-heading__note">
@@ -352,7 +502,7 @@ export default function Home() {
           <div className="container">
             <div className="music__inner">
               <div className="music__intro">
-                <p className="section-label">04 / Music &amp; Sound</p>
+                <p className="section-label">05 / Music &amp; Sound</p>
                 <h2 id="music-title">
                   Sound is part
                   <br />
@@ -426,7 +576,7 @@ export default function Home() {
         >
           <div className="container contact__inner">
             <div className="contact__intro">
-              <p className="section-label">05 / Contact</p>
+              <p className="section-label">06 / Contact</p>
               <h2 id="contact-title">
                 Let&apos;s connect
                 <br />
@@ -461,7 +611,7 @@ export default function Home() {
               <div>
                 <h2>Explore</h2>
                 <a href="#about">About</a>
-                <a href="#services">Services</a>
+                <a href="#services">Services</a>\n                <a href="#pricing">Pricing</a>
                 <a href="#work">Work</a>
                 <a href="#music-sound">Music &amp; Sound</a>
                 <a href="#contact">Contact</a>
