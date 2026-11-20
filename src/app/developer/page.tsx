@@ -46,8 +46,8 @@ const projects = [
       "A desktop VPN application concept being developed with Flutter. The project explores a multi-screen interface for connection status, logs and settings.",
     stack: ["Flutter", "Dart"],
     focus: "Desktop UI · Application structure · Product thinking",
-    href: "https://github.com/Ikeys-Studio",
-    linkLabel: "Explore GitHub profile",
+    href: "/developer/projects/nexusvpn",
+    linkLabel: "Read case study",
   },
 ];
 
