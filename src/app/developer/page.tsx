@@ -24,8 +24,8 @@ const projects = [
       "A creative agency website bringing together brand identity, digital services and music production. Built with a responsive Next.js app, reusable React components and a server-side enquiry workflow.",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     focus: "Frontend development · Responsive UI · Enquiry workflow",
-    href: "https://github.com/Ikeys-Studio/My-portfolio",
-    linkLabel: "View source repository",
+    href: "/developer/projects/triple-thread-agency",
+    linkLabel: "Read case study",
   },
   {
     number: "02",
