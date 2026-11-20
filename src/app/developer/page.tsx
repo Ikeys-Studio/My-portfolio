@@ -35,8 +35,8 @@ const projects = [
       "A portfolio and studio website project using PHP and MySQL, with a database-backed admin area for managing projects, messages and visitor records.",
     stack: ["PHP", "MySQL", "JavaScript", "CSS"],
     focus: "Server-side forms · Database integration · Admin tools",
-    href: "https://github.com/Ikeys-Studio",
-    linkLabel: "Explore GitHub profile",
+    href: "/developer/projects/kofi-grooves",
+    linkLabel: "Read case study",
   },
   {
     number: "03",
