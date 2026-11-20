@@ -156,3 +156,45 @@
  .developer-page .developer-project-meta { align-items: flex-start; }
  .developer-page .developer-project-status { max-width: 145px; }
 }
+
+
+/* Final responsive refinements: prevent desktop content from forcing overflow
+   and make the skill list easier to scan on narrow screens. */
+.developer-page .developer-about {
+  width: min(100% - 48px, 1152px);
+  min-width: 0;
+  grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+}
+.developer-page .developer-about > div {
+  min-width: 0;
+  max-width: 100%;
+}
+.developer-page .developer-about p,
+.developer-page .developer-about h2 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.developer-page #skills,
+.developer-page #skills > div,
+.developer-page .developer-skills-grid,
+.developer-page .developer-skills-grid > div {
+  min-width: 0;
+  max-width: 100%;
+}
+@media (max-width: 640px) {
+  .developer-page .developer-skills-grid > div ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 18px;
+    row-gap: 12px;
+  }
+  .developer-page .developer-skills-grid > div li {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .developer-page .developer-about {
+    width: min(100% - 36px, 100%);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+}
